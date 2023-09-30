@@ -56,3 +56,27 @@ if (logoutButton) {
         logout();
     });
 }
+
+// Function to get and display geolocation
+function getGeolocation() {
+    if ('geolocation' in navigator) {
+        navigator.geolocation.getCurrentPosition((position) => {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            
+            console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+        }, (error) => {
+            console.error('Geolocation error:', error);
+        });
+    } else {
+        console.error('Geolocation is not available in this browser.');
+    }
+}
+
+// Add a click event listener to the "Get Location" button
+const getLocationButton = document.getElementById('getLocationButton');
+if (getLocationButton) {
+    getLocationButton.addEventListener('click', () => {
+        getGeolocation();
+    });
+}
