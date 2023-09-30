@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firestore Project Data</title>
+</head>
+<body>
+    <h1>Project Data</h1>
+    <table id="projectTable" border="1">
+        <thead>
+            <tr>
+                <th>Name</th> 
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data from Firestore will be inserted here -->
+        </tbody>
+    </table>
+
+    <!-- Firebase JavaScript SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
+
+    <!-- Your Firebase Config -->
+    <script src="firebase-config.js"></script>
+
+    <!-- Your JavaScript Code -->
+    <script src="app.js"></script>
+</body>
+</html>
