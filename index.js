@@ -17,19 +17,43 @@ function renderProjects(projects) {
 // Check if the user is authenticated
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
+        console.log(user.email);
+        console.log(user);
         // User is signed in, fetch and render data
-        db.collection('projects').get()
-            .then((querySnapshot) => {
-                const projects = [];
-                querySnapshot.forEach((doc) => {
-                    const project = doc.data();
-                    projects.push(project);
-                });
-                renderProjects(projects);
-            })
-            .catch((error) => {
-                console.error('Error fetching projects: ', error);
-            });
+        // db.collection('projects').get()
+        //     .then((querySnapshot) => {
+        //         const projects = [];
+        //         querySnapshot.forEach((doc) => {
+        //             const project = doc.data();
+        //             projects.push(project);
+        //         });
+        //         renderProjects(projects);
+        //     })
+        //     .catch((error) => {
+        //         console.error('Error fetching projects: ', error);
+        //     });
+        // Reference to the document
+        const docRef = db.collection("users").doc(user.email);
+
+        // Get the document
+        docRef.get().then((doc) => {
+        if (doc.exists) {
+            // Document found, you can access its data
+            const data = doc.data();
+            const role = data.role;
+            console.log("Document data:", data);
+            if(role == 1){
+                window.location.href = 'student.html';
+            } else {
+                alert('Teacher not implemented yet :((('); //TODO
+            }
+        } else {
+            console.log("No such document!");
+            alert('Login failed. Please check your credentials.');
+        }
+        }).catch((error) => {
+        console.error("Error getting document:", error);
+        });
     } else {
         // User is not signed in, redirect to login page
         window.location.href = 'login.html';

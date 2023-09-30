@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Firestore Project Data</title>
+    <title>Student</title>
 </head>
 <body>
     <button id="logoutButton">Logout</button>
     <!-- Add a button to get geolocation -->
     <button id="getLocationButton">Get Location</button>
-    <h1>Project Data</h1>
-    <table id="projectTable" border="1">
+    <h1>Student Data</h1>
+    <!--<table id="projectTable" border="1">
         <thead>
             <tr>
                 <th>Name</th> 
@@ -18,9 +18,14 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Data from Firestore will be inserted here -->
         </tbody>
-    </table>
+    </table> -->
+
+    <div id="points-place"></div>
+    <div id="name-place"></div>
+
+    <h2>Tasks</h2>
+    <div id="task-place"></div>
 
     <!-- Firebase JavaScript SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
@@ -31,6 +36,6 @@
     <script src="firebase-config.js"></script>
 
     <!-- Your JavaScript Code -->
-    <script src="index.js"></script>
+    <script src="student.js"></script>
 </body>
 </html>
