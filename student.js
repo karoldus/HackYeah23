@@ -14,9 +14,19 @@
 //     });
 // }
 
-// TODO
+// // TODO
 // function get_task_details(task_id){
-//     db.collection('tasks').doc(task_id);
+//     const task = db.collection('tasks').doc(task_id.toString());
+//     task.get().then((doc) => {
+//         if (doc.exists) {
+//             const data = doc.data();
+//             console.log(data);
+//             return data;
+//         } else {
+//             console.log("No such document!");
+//             return null;
+//         }
+//     });
 // }
 
 // Check if the user is authenticated
@@ -88,7 +98,7 @@ firebase.auth().onAuthStateChanged((user) => {
             {
                 tasks_html += '<h3>Zadania do realizacji</h3>';
                 tasks_not_realized.forEach(element => {
-                    tasks_html += '<div class="task"><h4>' + element.id + '</h4> Zobacz szczegóły <a href="student/tasks/' + element.id + '">tutaj</a></div>';
+                    tasks_html += '<div class="task"><h4>' + element.id + '</h4> Zobacz szczegóły <a href="student/tasks?id=' + element.id + '">tutaj</a></div>';
                 });
             }
 
@@ -99,7 +109,7 @@ firebase.auth().onAuthStateChanged((user) => {
             {
                 tasks_html += '<h3>Zrealizowane zadania</h3>';
                 tasks_realized.forEach(element => {
-                    tasks_html += '<div class="task"><h4>' + element.id + '</h4> Zobacz szczegóły <a href="student/tasks/' + element.id + '">tutaj</a></div>';
+                    tasks_html += '<div class="task"><h4>' + element.id + '</h4> Zobacz szczegóły <a href="student/tasks?id=' + element.id + '">tutaj</a></div>';
                 });
             }
 
