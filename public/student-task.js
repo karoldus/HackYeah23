@@ -150,6 +150,10 @@ firebase.auth().onAuthStateChanged((user) => {
                     {
                         task_htlm += '<button type="button" id="DoTaskButton" class="btn btn-primary">Wykonaj zadanie</button>';
                     }
+
+                    map_url = "https://www.google.com/maps?z=12&t=m&q=loc:" + goal_geo._lat + "+" + goal_geo._long;
+                    task_htlm += '<a href="' + map_url + '" target="_blank">Zobacz na mapie</a>';
+
                     taskElement.innerHTML = task_htlm;
 
                     const doButton = document.getElementById("DoTaskButton");
