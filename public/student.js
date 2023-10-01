@@ -21,12 +21,13 @@ firebase.auth().onAuthStateChanged((user) => {
             const name = data.name;
             const tasks = data.tasks;
 
-            const pointsElement = document.getElementById('points-place');
-            pointsElement.innerHTML = points.toString();
-
             const nameElement = document.getElementById('name-place');
-            nameElement.innerHTML = name;
+            nameElement.innerHTML = "Imię: " + name;
 
+            const pointsElement = document.getElementById('points-place');
+            pointsElement.innerHTML = "Punkty: " + points.toString();
+
+        
             const taskElement = document.getElementById('task-place');
 
             if(tasks.length == 0){

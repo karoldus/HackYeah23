@@ -4,7 +4,7 @@ global_project_geo = null;
 
 function do_the_task_after_geo(user_geo)
 {  
-    if(Math.abs(user_geo[0] - global_project_geo[0]) > 0.1 || Math.abs(user_geo[1] - global_project_geo[1]) > 0.1)
+    if(Math.abs(user_geo[0] - global_project_geo[0]) > 0.01 || Math.abs(user_geo[1] - global_project_geo[1]) > 0.01)
     {
         alert("Nie jesteś w pobliżu miejsca zadania. Przejdź do miejsca zadania i spróbuj ponownie.");
         return;
