@@ -143,7 +143,8 @@ firebase.auth().onAuthStateChanged((user) => {
                     const taskElement = document.getElementById('task-place');
                     task_htlm = '<h1>' + goal_name + '</h1>';
                     task_htlm += '<p>' + goal_description + '</p>';
-                    task_htlm += '<p>Deadline: ' + task_data.deadline + '</p>';
+                    const deadline_formated = new firebase.firestore.Timestamp(deadline.seconds, deadline.nanoseconds).toDate();
+                    task_htlm += '<p>Termin: ' + deadline_formated + '</p>';
 
                     if(user_task_status == "undone")
                     {
