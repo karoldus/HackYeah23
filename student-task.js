@@ -96,20 +96,7 @@ firebase.auth().onAuthStateChanged((user) => {
         global_user = user;
         console.log(user.email);
         console.log(user);
-        // User is signed in, fetch and render data
-        // db.collection('projects').get()
-        //     .then((querySnapshot) => {
-        //         const projects = [];
-        //         querySnapshot.forEach((doc) => {
-        //             const project = doc.data();
-        //             projects.push(project);
-        //         });
-        //         renderProjects(projects);
-        //     })
-        //     .catch((error) => {
-        //         console.error('Error fetching projects: ', error);
-        //     });
-        // Reference to the document
+        
         const docRef = db.collection("users").doc(user.email);
 
         // Get the document
@@ -157,7 +144,7 @@ firebase.auth().onAuthStateChanged((user) => {
                     task_htlm = '<h1>' + goal_name + '</h1>';
                     task_htlm += '<p>' + goal_description + '</p>';
                     task_htlm += '<p>Deadline: ' + task_data.deadline + '</p>';
-                    //button to "wykonaj zadanie"
+
                     if(user_task_status == "undone")
                     {
                         task_htlm += '<button type="button" id="DoTaskButton" class="btn btn-primary">Wykonaj zadanie</button>';
@@ -209,12 +196,3 @@ if (logoutButton) {
     });
 }
 
-
-
-// // Add a click event listener to the "Get Location" button
-// const getLocationButton = document.getElementById('getLocationButton');
-// if (getLocationButton) {
-//     getLocationButton.addEventListener('click', () => {
-//         getGeolocation();
-//     });
-// }
