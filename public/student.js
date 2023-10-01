@@ -56,7 +56,7 @@ firebase.auth().onAuthStateChanged((user) => {
             {
                 tasks_html += '<h3>Zadania do realizacji</h3>';
                 tasks_not_realized.forEach(element => {
-                    tasks_html += '<div class="task"><h4>' + element.id + '</h4> Zobacz szczegóły <a href="student-task.html?id=' + element.id + '&status=undone">tutaj</a></div>';
+                    tasks_html += '<div class="task">Zadanie nr ' + element.id + ' - zobacz szczegóły <a href="student-task.html?id=' + element.id + '&status=undone">tutaj</a></div>';
                 });
             }
 
@@ -67,7 +67,7 @@ firebase.auth().onAuthStateChanged((user) => {
             {
                 tasks_html += '<h3>Zrealizowane zadania</h3>';
                 tasks_realized.forEach(element => {
-                    tasks_html += '<div class="task"><h4>' + element.id + '</h4> Zobacz szczegóły <a href="student-task.html?id=' + element.id + '&status=done">tutaj</a></div>';
+                    tasks_html += '<div class="task">Zadanie nr ' + element.id + ' - zobacz szczegóły <a href="student-task.html?id=' + element.id + '&status=done">tutaj</a></div>';
                 });
             }
 

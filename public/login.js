@@ -14,7 +14,7 @@ loginForm.addEventListener('submit', (e) => {
     // Sign in with email and password
     auth.signInWithEmailAndPassword(email, password)
         .then(() => {
-            alert('Login successful!');
+            // alert('Zalogowano!');
             // Redirect to the main page if login is successful
             window.location.href = 'index.html';
         })
